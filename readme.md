@@ -17,14 +17,16 @@
 - [ ] Post layout
 - [x] Feed templates
 - [x] Sitemap template
-- [ ] Robots.txt
-- [ ] Humans.txt
-- [ ] Build.txt
-- [ ] Web manifest
+- [x] Robots.txt
+- [x] Humans.txt
+- [x] Build.txt
+- [x] Web manifest
+- [x] Service worker
 - [ ] Favicons
 - [ ] Assets
 - [ ] Components
 - [x] Organise/comment eleventy config
+- [ ] Setup CSS structure
 
 ## Inspiration
 

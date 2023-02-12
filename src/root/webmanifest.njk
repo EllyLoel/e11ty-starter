@@ -1,0 +1,29 @@
+---
+permalink: "/manifest.webmanifest"
+eleventyExcludeFromCollections: true
+---
+{
+	"lang": "{{ metadata.language }}",
+	"dir": "ltr",
+	"name": "{{ metadata.title }}",
+	"short_name": "{{ metadata.short_name }}",
+	"id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+	"scope": "/",
+	"display": "standalone",
+	"orientation": "natural",
+	"background_color": "#bd93f9",
+	"description": "{{ metadata.description }}",
+	"icons": [
+		{
+			"src": "/icon-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
+}
