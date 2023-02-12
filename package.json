@@ -1,0 +1,52 @@
+{
+  "name": "e11ty-starter",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve --incremental",
+    "build": "npx @11ty/eleventy",
+    "clean": "rimraf _site",
+    "build:debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve --incremental --quiet",
+    "build:benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "eleventy-sample",
+    "blog"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ellyloel/e11ty-starter.git"
+  },
+  "author": {
+    "name": "Elly Loel",
+    "email": "hello@ellyloel.com",
+    "url": "https://ellyloel.com/"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "bugs": {
+    "url": "https://github.com/ellyloel/e11ty-starter/issues"
+  },
+  "homepage": "https://github.com/ellyloel/e11ty-starter#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.0-beta.3",
+    "@11ty/eleventy-activity-feed": "^1.0.9",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-bundle": "^1.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@11ty/eleventy-plugin-vite": "^4.0.0",
+    "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "luxon": "^3.2.1",
+    "rimraf": "^4.1.2"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

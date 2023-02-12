@@ -1,0 +1,21 @@
+{
+  "title": "Title of the website",
+  "short_name": "Short name of the website",
+  "description": "Description of the website.",
+  "url": "https://example.com",
+  "domain": "example.com",
+  "language": "en",
+  "locale": "en_au",
+  "author": {
+    "name": "Author Name",
+    "email": "you@example.com",
+    "url": "https://example.com/about/",
+    "links": {
+      "Mastodon": "https://mastodon.example/@example",
+      "LinkedIn": "https://linkedin.com/in/example",
+      "CodePen": "https://codepen.io/example",
+      "GitHub": "https://github.com/example",
+      "Twitter": "https://twitter.com/example"
+    }
+  }
+}
