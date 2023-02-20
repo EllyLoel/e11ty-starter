@@ -1,6 +1,5 @@
 ---
 permalink: "/humans.txt"
-eleventyExcludeFromCollections: true
 ---
 https://humanstxt.org/
 
@@ -17,4 +16,4 @@ Site: https://ellyloel.com
 
 /* SITE */
 
-Last update: {{ build.timestamp | dateToISO }}
+Last update: {{ build.timestamp | dateToRfc3339 }}
