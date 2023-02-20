@@ -11,4 +11,8 @@ const addNonBreakingSpace = (str) => {
   return title;
 };
 
-module.exports = { excerpt, addNonBreakingSpace };
+const newUrl = (url, base) => {
+  return new URL(url, base);
+};
+
+module.exports = { excerpt, addNonBreakingSpace, newUrl };

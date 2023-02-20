@@ -1,0 +1,42 @@
+{%- set tempTitle -%}
+{%- if title -%}
+  {{ title }} | {{ metadata.title }}
+{%- else -%}
+  {{ metadata.title }}
+{%- endif -%}
+{%- endset -%}
+
+<!DOCTYPE html>
+<html lang="{{ metadata.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tempTitle }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    {% include "partials/meta.njk" %}
+  </head>
+  <body>
+    <a href="#main" class="visually-hidden">Skip to main content</a>
+
+    <header>
+      <a href="/" class="home-link">{{ metadata.title }}</a>
+
+      <nav>
+        <h2 class="visually-hidden">Top level navigation menu</h2>
+        <ul>
+          {%- for entry in collections.all | eleventyNavigation %}
+            <li>
+              <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+            </li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      {{ content | safe }}
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
+{%- set tempDescription = page.data.description if page.data.description else 
+	metadata.description -%}
+{%- set tempCanonical = page.data.canonical if page.data.canonical else 
+	absolutePageUrl -%}
+{%- set tempType = page.data.type if page.data.type else 
+	"website" -%}
+{%- set themeColorLight = "#bd93f9" -%}
+{%- set themeColorDark = "#5a1c93" -%}
+{%- set twitterHandle = metadata.author.links.Twitter | replace("https://twitter.com/", "") | replace("/", "") -%}
+
+{#- General -#}
+<meta name="author" content="{{ metadata.author.name }}">
+<link rel="canonical" href="{{ tempCanonical }}">
+<meta name="description" value="{{ tempDescription }}">
+<meta name="generator" content="{{ eleventy.generator }}">
+
+{#- Color -#}
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ themeColorLight }}">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ themeColorDark }}">
+
+{#- Link preview -#}
+<meta property="og:type" content="{{ tempType }}">
+<meta property="og:locale" content="{{ metadata.locale }}">
+{%- if page.data.image -%}<meta name="twitter:card" content="summary_large_image">{%- endif -%}
+{%- if page.data.imageAlt -%}<meta property="og:image:alt" content="{{ page.data.imageAlt }}">{%- endif -%}
+{%- if page.data.image -%}<meta property="og:image" content="{{ page.data.image }}">{%- endif -%}
+{%- if twitterHandle -%}<meta name="twitter:creator" content="@{{ twitterHandle }}">{%- endif -%}
+
+{#- Icons -#}
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+
+{#- Feeds -#}
+<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+<link rel="alternate" href="/feed.json" type="application/json" title="{{ metadata.title }}">
+<link rel="alternate" href="/follow.rss" type="application/rss+xml" title="{{ metadata.author.name }}'s Activity Feed">
+
+{#- Indieweb -#}
+<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+
+{#- Webmentions -#}
+<link href="mailto:{{ metadata.author.email }}" rel="me">
+{% if metadata.author.links.Mastodon %}<link href="{{ metadata.author.links.Mastodon }}" rel="me">{% endif %}
+{% if metadata.author.links.GitHub %}<link href="{{ metadata.author.links.GitHub }}" rel="me">{% endif %}
+<link rel="webmention" href="https://webmention.io/{{ metadata.domain }}/webmention">
+<link rel="pingback" href="https://webmention.io/{{ metadata.domain }}/xmlrpc">
+
+{#- Aperture -#}
+<link rel="microsub" href="https://aperture.p3k.io/microsub/816">

@@ -4,7 +4,6 @@ specifiers:
   '@11ty/eleventy': 2.0.0-beta.3
   '@11ty/eleventy-activity-feed': ^1.0.9
   '@11ty/eleventy-navigation': ^0.3.5
-  '@11ty/eleventy-plugin-bundle': ^1.0.1
   '@11ty/eleventy-plugin-rss': ^1.2.0
   '@11ty/eleventy-plugin-syntaxhighlight': ^4.2.0
   '@11ty/eleventy-plugin-vite': ^4.0.0
@@ -16,7 +15,6 @@ devDependencies:
   '@11ty/eleventy': 2.0.0-beta.3
   '@11ty/eleventy-activity-feed': 1.0.9
   '@11ty/eleventy-navigation': 0.3.5
-  '@11ty/eleventy-plugin-bundle': 1.0.1
   '@11ty/eleventy-plugin-rss': 1.2.0
   '@11ty/eleventy-plugin-syntaxhighlight': 4.2.0
   '@11ty/eleventy-plugin-vite': 4.0.0
@@ -81,15 +79,6 @@ packages:
     resolution: {integrity: sha512-4aKW5aIQDFed8xs1G1pWcEiFPcDSwZtA4IH1eERtoJ+Xy+/fsoe0pzbDmw84bHZ9ACny5jblENhfZhcCxklqQw==}
     dependencies:
       dependency-graph: 0.11.0
-    dev: true
-
-  /@11ty/eleventy-plugin-bundle/1.0.1:
-    resolution: {integrity: sha512-TT0Aaxwa5Mt1K7gBYtC788Bb3M2TemUvttMA/GG9PJR0iPooTfSRJ2Lzp7H2+dabaq3RDeMCupbi+GqDSmoj2A==}
-    engines: {node: '>=14'}
-    dependencies:
-      debug: 4.3.4
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@11ty/eleventy-plugin-rss/1.2.0:

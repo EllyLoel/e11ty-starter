@@ -1,5 +1,4 @@
 // External
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const { EleventyHtmlBasePlugin: pluginHtmlBase } = require("@11ty/eleventy");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -19,11 +18,11 @@ const { getAllTags, filterTagList } = require("./src/_11ty/filters/tags.cjs");
 const {
   excerpt,
   addNonBreakingSpace,
+  newUrl,
 } = require("./src/_11ty/filters/text.cjs");
 
 module.exports = function (eleventyConfig) {
   // External plugins
-  eleventyConfig.addPlugin(pluginBundle);
   eleventyConfig.addPlugin(pluginHtmlBase);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
@@ -48,6 +47,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("filterTagList", filterTagList);
   eleventyConfig.addFilter("excerpt", excerpt);
   eleventyConfig.addFilter("addNonBreakingSpace", addNonBreakingSpace);
+  eleventyConfig.addFilter("newUrl", newUrl);
+
+  // Passthrough copy
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
   return {
     templateFormats: ["html", "md", "njk", "webc"],

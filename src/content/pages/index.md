@@ -1,5 +1,4 @@
 ---
-layout: "layouts/base.webc"
 permalink: "/"
 ---
 
