@@ -1,5 +1,5 @@
 module.exports = {
-  layout: "layouts/base.njk",
+  layout: "layouts/post.njk",
   type: "article",
   permalink: "/garden/{{ title | slugify }}/",
 };

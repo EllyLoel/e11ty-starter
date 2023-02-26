@@ -1,4 +1,5 @@
 // External
+const pluginFavicons = require("eleventy-plugin-gen-favicons");
 const { EleventyHtmlBasePlugin: pluginHtmlBase } = require("@11ty/eleventy");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -7,22 +8,10 @@ const pluginVite = require("@11ty/eleventy-plugin-vite");
 const pluginWebC = require("@11ty/eleventy-plugin-webc");
 
 // Internal
-const pluginDrafts = require("./src/_11ty/plugins/drafts.cjs");
-const { limit, unique } = require("./src/_11ty/filters/arrays.cjs");
-const {
-  readableDate,
-  htmlDateString,
-} = require("./src/_11ty/filters/dates.cjs");
-const { linkGraph } = require("./src/_11ty/filters/link-graph.cjs");
-const { getAllTags, filterTagList } = require("./src/_11ty/filters/tags.cjs");
-const {
-  excerpt,
-  addNonBreakingSpace,
-  newUrl,
-} = require("./src/_11ty/filters/text.cjs");
 
 module.exports = function (eleventyConfig) {
   // External plugins
+  eleventyConfig.addPlugin(pluginFavicons, { generateManifest: false });
   eleventyConfig.addPlugin(pluginHtmlBase);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
@@ -35,19 +24,52 @@ module.exports = function (eleventyConfig) {
   });
 
   // Internal plugins
-  eleventyConfig.addPlugin(pluginDrafts);
+  eleventyConfig.addPlugin(require("./src/_11ty/plugins/drafts.cjs"));
+  eleventyConfig.addPlugin(require("./src/_11ty/plugins/image.cjs"));
+  eleventyConfig.addPlugin(require("./src/_11ty/plugins/wikilinks.cjs"));
 
   // Filters
-  eleventyConfig.addFilter("limit", limit);
-  eleventyConfig.addFilter("unique", unique);
-  eleventyConfig.addFilter("readableDate", readableDate);
-  eleventyConfig.addFilter("htmlDateString", htmlDateString);
-  eleventyConfig.addFilter("linkGraph", linkGraph);
-  eleventyConfig.addFilter("getAllTags", getAllTags);
-  eleventyConfig.addFilter("filterTagList", filterTagList);
-  eleventyConfig.addFilter("excerpt", excerpt);
-  eleventyConfig.addFilter("addNonBreakingSpace", addNonBreakingSpace);
-  eleventyConfig.addFilter("newUrl", newUrl);
+  eleventyConfig.addFilter("limit", require("./src/_11ty/filters/limit.cjs"));
+  eleventyConfig.addFilter("unique", require("./src/_11ty/filters/unique.cjs"));
+  eleventyConfig.addFilter(
+    "readableDate",
+    require("./src/_11ty/filters/readableDate.cjs")
+  );
+  eleventyConfig.addFilter(
+    "htmlDateString",
+    require("./src/_11ty/filters/htmlDateString.cjs")
+  );
+  eleventyConfig.addFilter(
+    "getAllTags",
+    require("./src/_11ty/filters/getAllTags.cjs")
+  );
+  eleventyConfig.addFilter(
+    "filterTagList",
+    require("./src/_11ty/filters/filterTagList.cjs")
+  );
+  eleventyConfig.addFilter(
+    "excerpt",
+    require("./src/_11ty/filters/excerpt.cjs")
+  );
+  eleventyConfig.addFilter(
+    "addNonBreakingSpace",
+    require("./src/_11ty/filters/addNonBreakingSpace.cjs")
+  );
+  eleventyConfig.addFilter("newUrl", require("./src/_11ty/filters/newUrl.cjs"));
+
+  // Shortcodes
+  eleventyConfig.addShortcode(
+    "figure",
+    require("./src/_11ty/shortcodes/figure.cjs")
+  );
+
+  // Collections
+  const types = ["article", "bookmark"];
+  for (const type of types) {
+    eleventyConfig.addCollection(type, (collectionApi) =>
+      collectionApi.getAll().filter((item) => item.data.type === type)
+    );
+  }
 
   // Passthrough copy
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });

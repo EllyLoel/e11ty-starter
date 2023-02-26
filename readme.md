@@ -12,7 +12,6 @@
 ## To do
 
 - [ ] Setup Plugins
-- [ ] Refactor link graph filter
 - [x] Base layout
 - [ ] Post layout
 - [x] Feed templates
@@ -22,12 +21,12 @@
 - [x] Build.txt
 - [x] Web manifest
 - [x] Service worker
-- [ ] Favicons
-- [ ] Assets
+- [x] Favicons
+- [x] Assets
 - [ ] Components
 - [x] Organise/comment eleventy config
 - [ ] Setup CSS structure
-- [ ] 404 page
+- [x] 404 page
 
 ## Inspiration
 

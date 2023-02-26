@@ -9,10 +9,35 @@
 <!DOCTYPE html>
 <html lang="{{ metadata.language }}">
   <head>
+    {#-
+      The Optimum Head Order – https://www.youtube.com/watch?v=UW1PEMBdX5E
+
+      1. <meta charset|http-equiv|viewport />
+      2. <title>
+      3. preconnect
+      4. <script src="" async></script>
+      5. CSS that includes @import
+      6. Synchronous JS
+      7. Synchronous CSS
+      8. preload
+      9. <script src="" defer></script>
+      10. prefetch / prerender
+      11. Everything else ('SEO' meta tags, icons, Open Graph, etc.)
+    -#}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ tempTitle }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/js/index.js"></script>
+    <script defer>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator
+            .serviceWorker
+            .register('/sw.js')
+        })
+      }
+    </script>
     {% include "partials/meta.njk" %}
   </head>
   <body>

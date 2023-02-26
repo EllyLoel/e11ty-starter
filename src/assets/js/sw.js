@@ -1,6 +1,3 @@
----
-permalink: "/sw.js"
----
 // https://gist.github.com/cferdinandi/6e4a73a69b0ee30c158c8dd37d314663
 
 // Core assets

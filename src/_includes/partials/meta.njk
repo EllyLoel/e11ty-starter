@@ -29,9 +29,7 @@
 {%- if twitterHandle -%}<meta name="twitter:creator" content="@{{ twitterHandle }}">{%- endif -%}
 
 {#- Icons -#}
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{%- favicons 'src/content/root/favicon.svg', appleIconBgColor={r: 0, g: 0, b: 0, alpha: 0} -%}
 <link rel="manifest" href="/manifest.webmanifest">
 
 {#- Feeds -#}

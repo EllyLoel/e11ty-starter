@@ -1,4 +1,4 @@
-const limit = (array, n) => {
+module.exports = (array, n) => {
   if (!Array.isArray(array) || array.length === 0) {
     return [];
   }
@@ -8,7 +8,3 @@ const limit = (array, n) => {
 
   return array.slice(0, n);
 };
-
-const unique = (array) => [...new Set(array)];
-
-module.exports = { limit, unique };
