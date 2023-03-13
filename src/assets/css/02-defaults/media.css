@@ -1,0 +1,17 @@
+figure {
+	display: grid;
+	gap: var(--space-s, 1em);
+	overflow-x: auto;
+
+	& table {
+		font-size: var(--label);
+	}
+}
+
+figcaption {
+	font-style: italic;
+
+	> * {
+		margin-block: 0;
+	}
+}

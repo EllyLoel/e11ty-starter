@@ -1,15 +1,15 @@
 {%- set tempTitle -%}
 {%- if title -%}
-  {{ title }} | {{ metadata.title }}
+	{{ title }} | {{ metadata.title }}
 {%- else -%}
-  {{ metadata.title }}
+	{{ metadata.title }}
 {%- endif -%}
 {%- endset -%}
 
 <!DOCTYPE html>
 <html lang="{{ metadata.language }}">
-  <head>
-    {#-
+	<head>
+		{#-
       The Optimum Head Order – https://www.youtube.com/watch?v=UW1PEMBdX5E
 
       1. <meta charset|http-equiv|viewport />
@@ -24,44 +24,45 @@
       10. prefetch / prerender
       11. Everything else ('SEO' meta tags, icons, Open Graph, etc.)
     -#}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ tempTitle }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <script src="/assets/js/index.js"></script>
-    <script defer>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator
-            .serviceWorker
-            .register('/sw.js')
-        })
-      }
-    </script>
-    {% include "partials/meta.njk" %}
-  </head>
-  <body>
-    <a href="#main" class="visually-hidden">Skip to main content</a>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ tempTitle }}</title>
+		<link rel="stylesheet" href="/assets/css/resets.css">
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<script src="/assets/js/index.js"></script>
+		<script defer>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator
+						.serviceWorker
+						.register('/sw.js')
+				})
+			}
+		</script>
+		{% include "partials/meta.njk" %}
+	</head>
+	<body>
+		<a href="#main" class="visually-hidden">Skip to main content</a>
 
-    <header>
-      <a href="/" class="home-link">{{ metadata.title }}</a>
+		<header>
+			<a href="/" class="home-link">{{ metadata.title }}</a>
 
-      <nav>
-        <h2 class="visually-hidden">Top level navigation menu</h2>
-        <ul>
-          {%- for entry in collections.all | eleventyNavigation %}
-            <li>
-              <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-            </li>
-          {%- endfor %}
-        </ul>
-      </nav>
-    </header>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul>
+					{%- for entry in collections.all | eleventyNavigation %}
+						<li>
+							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+						</li>
+					{%- endfor %}
+				</ul>
+			</nav>
+		</header>
 
-    <main id="main">
-      {{ content | safe }}
-    </main>
+		<main id="main">
+			{{ content | safe }}
+		</main>
 
-    <footer></footer>
-  </body>
+		<footer></footer>
+	</body>
 </html>

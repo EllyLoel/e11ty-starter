@@ -1,0 +1,91 @@
+:root {
+	--Canvas: hsl(0deg 0% 100%);
+	--CanvasText: hsl(0deg 0% 0%);
+	--LinkText: hsl(240deg 100% 47%);
+	--VisitedText: hsl(271deg 68% 32%);
+	--ActiveText: hsl(0deg 100% 47%);
+	--ButtonFace: hsl(240deg 11% 92%);
+	--ButtonText: hsl(0deg 0% 0%);
+	--ButtonBorder: hsl(0deg 0% 89%);
+	--Field: hsl(0deg 0% 100%);
+	--FieldText: hsl(0deg 0% 15%);
+	--Highlight: hsl(212deg 99% 85%);
+	--HighlightText: hsl(0deg 0% 0%);
+	--SelectedItem: hsl(213deg 100% 44%);
+	--SelectedItemText: hsl(0deg 0% 0%);
+	--Mark: hsl(60deg 100% 50%);
+	--MarkText: hsl(0deg 0% 0%);
+	--GrayText: hsl(0deg 0% 43%);
+	--AccentColor: hsl(211deg 100% 50%);
+	--AccentColorText: hsl(0deg 0% 0%);
+
+	color-scheme: light dark;
+
+	@media (prefers-color-scheme: dark) {
+		--Canvas: hsl(252deg 11% 12%);
+		--CanvasText: hsl(240deg 70% 99%);
+		--LinkText: hsl(240deg 99% 77%);
+		--VisitedText: hsl(300deg 100% 84%);
+		--ActiveText: hsl(0deg 100% 70%);
+		--ButtonFace: hsl(249deg 9% 18%);
+		--ButtonText: hsl(240deg 70% 99%);
+		--ButtonBorder: hsl(252deg 3% 47%);
+		--Field: hsl(249deg 9% 18%);
+		--FieldText: hsl(240deg 70% 99%);
+		--Highlight: hsl(212deg 38% 40%);
+		--HighlightText: hsl(0deg 0% 0%);
+		--SelectedItem: hsl(212deg 100% 80%);
+		--SelectedItemText: hsl(240deg 70% 99%);
+		--Mark: hsl(60deg 100% 50%);
+		--MarkText: hsl(0deg 0% 0%);
+		--GrayText: hsl(252deg 3% 47%);
+		--AccentColor: hsl(211deg 100% 50%);
+		--AccentColorText: hsl(0deg 0% 100%);
+	}
+
+	&[data-theme="dark"],
+	& [data-theme="dark"] {
+		--Canvas: hsl(252deg 11% 12%);
+		--CanvasText: hsl(240deg 70% 99%);
+		--LinkText: hsl(240deg 99% 77%);
+		--VisitedText: hsl(300deg 100% 84%);
+		--ActiveText: hsl(0deg 100% 70%);
+		--ButtonFace: hsl(249deg 9% 18%);
+		--ButtonText: hsl(240deg 70% 99%);
+		--ButtonBorder: hsl(252deg 3% 47%);
+		--Field: hsl(249deg 9% 18%);
+		--FieldText: hsl(240deg 70% 99%);
+		--Highlight: hsl(212deg 38% 40%);
+		--HighlightText: hsl(0deg 0% 0%);
+		--SelectedItem: hsl(214deg 100% 41%);
+		--SelectedItemText: hsl(0deg 0% 100%);
+		--Mark: hsl(60deg 100% 50%);
+		--MarkText: hsl(0deg 0% 0%);
+		--GrayText: hsl(252deg 3% 47%);
+		--AccentColor: hsl(211deg 100% 50%);
+		--AccentColorText: hsl(0deg 0% 100%);
+	}
+
+	&[data-theme="light"],
+	& [data-theme="light"] {
+		--Canvas: hsl(0deg 0% 100%);
+		--CanvasText: hsl(0deg 0% 0%);
+		--LinkText: hsl(240deg 100% 47%);
+		--VisitedText: hsl(271deg 68% 32%);
+		--ActiveText: hsl(0deg 100% 47%);
+		--ButtonFace: hsl(240deg 11% 92%);
+		--ButtonText: hsl(0deg 0% 0%);
+		--ButtonBorder: hsl(0deg 0% 89%);
+		--Field: hsl(0deg 0% 100%);
+		--FieldText: hsl(0deg 0% 15%);
+		--Highlight: hsl(212deg 99% 85%);
+		--HighlightText: hsl(0deg 0% 0%);
+		--SelectedItem: hsl(213deg 100% 44%);
+		--SelectedItemText: hsl(0deg 0% 100%);
+		--Mark: hsl(60deg 100% 50%);
+		--MarkText: hsl(0deg 0% 0%);
+		--GrayText: hsl(0deg 0% 43%);
+		--AccentColor: hsl(211deg 100% 50%);
+		--AccentColorText: hsl(0deg 0% 0%);
+	}
+}

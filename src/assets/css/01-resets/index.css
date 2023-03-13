@@ -1,0 +1,10 @@
+@layer remedy, reset;
+
+@import url("cssremedy/css/remedy.css") layer(remedy);
+@import url("cssremedy/css/reminders.css") layer(remedy);
+@import url("root.css") layer(reset);
+@import url("a11y.css") layer(reset);
+@import url("type.css") layer(reset);
+@import url("blocks.css") layer(reset);
+@import url("forms.css") layer(reset);
+@import url("media.css") layer(reset);

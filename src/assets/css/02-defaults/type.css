@@ -1,0 +1,159 @@
+/* 
+ * Calc `em` based line height, bigger line height for smaller font size and smaller line height for bigger font size.
+ * @link https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
+ * @link https://codepen.io/supersimplenet/pen/KKXBvMj
+ */
+* {
+	line-height: calc(0.25rem + 1em + 0.25rem);
+}
+
+/********************
+ * HEADING ELEMENTS *
+ ********************/
+
+header {
+	:is(h1, h2, h3, h4, h5, h6, p) {
+		margin-block: 0;
+	}
+}
+
+/*****************
+ * LIST ELEMENTS *
+ *****************/
+
+:is(ul, ol):not([class]) {
+	padding-inline-start: var(--space-s, 1em);
+}
+
+li:not(:first-child) {
+	margin-block-start: var(--space-4xs, 0.125em);
+}
+
+/******************
+ * TABLE ELEMENTS *
+ ******************/
+
+th {
+	padding: var(
+		--th-padding,
+		var(--th-block, 0) var(--th-inline, var(--space-3xs))
+	);
+	text-align: var(--th-align, left);
+}
+
+td {
+	padding: var(
+		--td-padding,
+		var(--td-block, 0) var(--td-inline, var(--space-3xs))
+	);
+	text-align: var(--td-align, left);
+}
+
+/******************
+ * BLOCK ELEMENTS *
+ ******************/
+
+section:not(:first-child) {
+	margin-block-start: var(--space-m-3xl);
+}
+
+blockquote {
+	border-inline-start: thick solid var(--border, currentColor);
+	margin-inline: 0;
+	padding-inline: var(--space-s, 1em);
+}
+
+details,
+figure,
+pre {
+	background-color: var(--shadow, hsl(0deg 0% 50% / 12.5%));
+	margin-inline: 0;
+	padding: var(--space-s, 1em);
+}
+
+pre[class*="language-"] {
+	padding: 0;
+
+	> code {
+		padding: var(--space-s, 1em);
+	}
+}
+
+details {
+	padding-block: var(--space-2xs);
+
+	&:only-child {
+		margin-block: 0;
+	}
+}
+
+summary {
+	font-weight: bold;
+}
+
+.details {
+	margin-block: var(--space-s);
+}
+
+hr {
+	border: 0;
+	display: flex;
+	height: auto;
+	justify-content: center;
+	margin: var(--space-m-3xl, 2em) 0;
+
+	&::after {
+		color: var(--border, inherit);
+		content: var(--hr, "* * *");
+	}
+}
+
+/*******************
+ * INLINE ELEMENTS *
+ *******************/
+
+/* stylelint-disable-next-line no-descending-specificity */
+code, /* Had to disable this so that I could keep this in the inline elements section */
+kbd,
+samp {
+	font-family: var(--font-code, var(--var-mono, var(--ui-mono)));
+	font-size: var(--smaller, 0.8em);
+}
+
+kbd.key {
+	--kbd-color-background: var(--Canvas);
+	--kbd-color-border: var(--ButtonBorder);
+	--kbd-color-text: var(--CanvasText);
+
+	background-color: var(--kbd-color-background);
+	border: 1px solid var(--kbd-color-border);
+	border-radius: 0.25rem;
+	box-shadow: 0 2px 0 1px var(--kbd-color-border);
+	color: var(--kbd-color-text);
+	display: inline-block;
+	font-family: inherit;
+	font-size: 0.75em;
+	line-height: 1;
+	min-width: 0.75rem;
+	padding: 2px 5px;
+	text-align: center;
+	transition-duration: 100ms;
+	transition-property: translate, box-shadow;
+	transition-timing-function: ease;
+	translate: 0 -1px;
+
+	&:hover {
+		box-shadow: 0 1px 0 0.5px var(--kbd-color-border);
+		translate: 0 1px;
+	}
+}
+
+::selection {
+	background-color: var(--Highlight);
+	color: var(--HighlightText);
+}
+
+mark {
+	background-color: var(--Highlight);
+	color: var(--HighlightText);
+}

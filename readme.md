@@ -25,7 +25,7 @@
 - [x] Assets
 - [ ] Components
 - [x] Organise/comment eleventy config
-- [ ] Setup CSS structure
+- [x] Setup CSS structure
 - [x] 404 page
 
 ## Inspiration

@@ -1,0 +1,6 @@
+input:not([type="checkbox"], [type="file"], [type="radio"]),
+select,
+textarea {
+	border-color: var(--field-border, var(--border, currentColor));
+	padding: revert-layer;
+}

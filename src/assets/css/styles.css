@@ -1,4 +1,6 @@
-body {
-  background: beige;
-  color: tomato;
-}
+@layer defaults, themes, layouts, utilities;
+
+@import url("02-defaults/index.css") layer(defaults);
+@import url("03-themes/index.css") layer(themes);
+@import url("04-layouts/index.css") layer(layouts);
+@import url("05-utilities/index.css") layer(utilities);

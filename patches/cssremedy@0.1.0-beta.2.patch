@@ -1,0 +1,265 @@
+diff --git a/css/remedy.css b/css/remedy.css
+index ccb4ca7c0548e3a7c81b22f3967749590aa3109f..7ef96da96e0fe8f98ac48ab70d2e7a8d9280f996 100644
+--- a/css/remedy.css
++++ b/css/remedy.css
+@@ -9,7 +9,6 @@ note: |
+ category: file
+ */
+ 
+-
+ /* @docs
+ label: Box Sizing
+ 
+@@ -18,8 +17,11 @@ note: |
+ 
+ category: global
+ */
+-*, ::before, ::after { box-sizing: border-box; }
+-
++*,
++::before,
++::after {
++  box-sizing: border-box;
++}
+ 
+ /* @docs
+ label: Line Sizing
+@@ -33,8 +35,9 @@ links:
+ 
+ category: global
+ */
+-html { line-sizing: normal; }
+-
++html {
++  line-sizing: normal;
++}
+ 
+ /* @docs
+ label: Body Margins
+@@ -44,8 +47,9 @@ note: |
+ 
+ category: global
+ */
+-body { margin: 0; }
+-
++body {
++  margin: 0;
++}
+ 
+ /* @docs
+ label: Heading Sizes
+@@ -55,13 +59,24 @@ note: |
+ 
+ category: typography
+ */
+-h1 { font-size: 2rem; }
+-h2 { font-size: 1.5rem; }
+-h3 { font-size: 1.17rem; }
+-h4 { font-size: 1.00rem; }
+-h5 { font-size: 0.83rem; }
+-h6 { font-size: 0.67rem; }
+-
++h1 {
++  font-size: 2rem;
++}
++h2 {
++  font-size: 1.5rem;
++}
++h3 {
++  font-size: 1.17rem;
++}
++h4 {
++  font-size: 1rem;
++}
++h5 {
++  font-size: 0.83rem;
++}
++h6 {
++  font-size: 0.67rem;
++}
+ 
+ /* @docs
+ label: H1 Margins
+@@ -71,8 +86,10 @@ note: |
+ 
+ category: typography
+ */
+-h1 { margin: 0.67em 0; }
+-
++h1 {
++  margin-block: 0.67em;
++  margin-inline: 0;
++}
+ 
+ /* @docs
+ label: Pre Wrapping
+@@ -82,8 +99,9 @@ note: |
+ 
+ category: typography
+ */
+-pre { white-space: pre-wrap; }
+-
++pre {
++  white-space: pre-wrap;
++}
+ 
+ /* @docs
+ label: Horizontal Rule
+@@ -99,11 +117,10 @@ hr {
+   border-style: solid;
+   border-width: 1px 0 0;
+   color: inherit;
+-  height: 0;
++  block-size: 0;
+   overflow: visible;
+ }
+ 
+-
+ /* @docs
+ label: Responsive Embeds
+ 
+@@ -114,13 +131,19 @@ note: |
+ 
+ category: embedded elements
+ */
+-img, svg, video, canvas, audio, iframe, embed, object {
++img,
++svg,
++video,
++canvas,
++audio,
++iframe,
++embed,
++object {
+   display: block;
+   vertical-align: middle;
+   max-width: 100%;
+ }
+ 
+-
+ /* @docs
+ label: Aspect Ratios
+ 
+@@ -132,11 +155,13 @@ note: |
+ 
+ category: embedded elements
+ */
+-img, svg, video, canvas {
++img,
++svg,
++video,
++canvas {
+   height: auto;
+ }
+ 
+-
+ /* @docs
+ label: Audio Width
+ 
+@@ -146,8 +171,9 @@ note: |
+ 
+ category: embedded elements
+ */
+-audio { width: 100%; }
+-
++audio {
++  width: 100%;
++}
+ 
+ /* @docs
+ label: Image Borders
+@@ -157,8 +183,9 @@ note: |
+ 
+ category: legacy browsers
+ */
+-img { border-style: none; }
+-
++img {
++  border-style: none;
++}
+ 
+ /* @docs
+ label: SVG Overflow
+@@ -168,8 +195,9 @@ note: |
+ 
+ category: legacy browsers
+ */
+-svg { overflow: hidden; }
+-
++svg {
++  overflow: hidden;
++}
+ 
+ /* @docs
+ label: HTML5 Elements
+@@ -179,11 +207,19 @@ note: |
+ 
+ category: legacy browsers
+ */
+-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
++article,
++aside,
++figcaption,
++figure,
++footer,
++header,
++hgroup,
++main,
++nav,
++section {
+   display: block;
+ }
+ 
+-
+ /* @docs
+ label: Checkbox & Radio Inputs
+ 
+@@ -193,8 +229,8 @@ note: |
+ 
+ category: legacy browsers
+ */
+-[type='checkbox'],
+-[type='radio'] {
++[type="checkbox"],
++[type="radio"] {
+   box-sizing: border-box;
+   padding: 0;
+ }
+diff --git a/css/reminders.css b/css/reminders.css
+index e99674c8338032be32cb8830027f117d1ab94a7d..ebb26c09069a01b3304e796e5b631bcc7036b91c 100644
+--- a/css/reminders.css
++++ b/css/reminders.css
+@@ -26,9 +26,9 @@ links:
+ 
+ category: navigation
+ */
+-/* nav ul {
++nav ul {
+   list-style: none;
+-} */
++}
+ 
+ 
+ /* @docs
+@@ -43,10 +43,10 @@ links:
+ 
+ category: navigation
+ */
+-/* nav li:before {
++nav li:before {
+   content: "\200B";
+   position: absolute;
+-} */
++}
+ 
+ 
+ /* @docs
+@@ -98,6 +98,6 @@ todo: |
+ 
+ category: typography
+ */
+-/* html { line-height: 1.5; }
++html { line-height: 1.5; }
+ h1, h2, h3, h4, h5, h6 { line-height: 1.25; }
+-caption, figcaption, label, legend { line-height: 1.375; } */
++caption, figcaption, label, legend { line-height: 1.375; }

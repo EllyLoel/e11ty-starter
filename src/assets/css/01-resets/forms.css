@@ -1,0 +1,111 @@
+button {
+	background-color: var(--ButtonFace, ButtonFace);
+	border-color: var(--ButtonBorder, ButtonBorder);
+	color: var(--ButtonText, ButtonText);
+	font: inherit;
+	line-height: 1.1;
+	margin: 0;
+	padding-block: 0.25em;
+	padding-inline: 1em;
+}
+
+textarea {
+	display: block;
+	font: inherit;
+	inline-size: 100%;
+	margin-block-end: 1em;
+	min-block-size: 6em;
+	min-block-size: 6lh; /* Not yet well supported, so keeping in a fallback for now */
+	resize: vertical;
+	resize: block; /* Not yet well supported, so keeping in a fallback for now */
+}
+
+fieldset {
+	border: thin solid var(--CanvasText, CanvasText);
+}
+
+input:is([type="tel"], [type="text"]),
+textarea {
+	padding-block: 0.25em;
+	padding-inline: 0.5em;
+}
+
+select {
+	padding-block: 0.25em;
+	padding-inline: 0.25em;
+}
+
+input:not([type="checkbox"], [type="radio"]),
+select {
+	display: block;
+	font: inherit;
+	inline-size: 100%;
+	line-height: 1.1;
+	margin-block-end: 1em;
+	max-inline-size: 100%;
+}
+
+input:is([type="tel"], [type="text"]),
+textarea,
+select {
+	background-color: var(--Field, Field);
+	border: thin solid var(--FieldText, FieldText);
+	color: var(--FieldText, FieldText);
+}
+
+button,
+input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]),
+select,
+textarea {
+	border-style: solid;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range#putting_it_all_together */
+input[type="range"][orient="vertical"] {
+	appearance: slider-vertical;
+	writing-mode: bt-lr;
+}
+
+input:is([type="checkbox"], [type="radio"], [type="range"]),
+progress {
+	accent-color: var(--SelectedItem, SelectedItem);
+}
+
+/*
+ * Sets the label text for any of the following situations:
+ * 1. `<label for></label><input id>`
+ * 2. `<input id><label for></label>`
+ * 3. `<label><input></label>`
+ */
+input:is([type="checkbox"], [type="radio"], [type="range"])[id] ~ label[for],
+label:has(input:is([type="checkbox"], [type="radio"], [type="range"])),
+label[for]:has(
+		~ input:is([type="checkbox"], [type="radio"], [type="range"])[id]
+	) {
+	color: var(--SelectedItemText, SelectedItemText);
+}
+
+::placeholder {
+	color: var(--GrayText, GrayText);
+}
+
+/*
+ * This rule contains a lot of duplicate code from certain above rules because we can't use `:is()`/`:where()` for a forgiving selector as they don't support pseudo elements
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/:is#forgiving_selector_parsing
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/:is#is_does_not_select_pseudo-elements
+ */
+::file-selector-button {
+	background-color: var(--ButtonFace, ButtonFace);
+	border-color: var(--ButtonBorder, ButtonBorder);
+	border-style: solid;
+	color: var(--ButtonText, ButtonText);
+	cursor: pointer;
+	display: block;
+	font: inherit;
+	inline-size: 100%;
+	margin: 0;
+	margin-block-end: 1em;
+	max-inline-size: 100%;
+	padding-block: 0.25em;
+	padding-inline: 1em;
+}

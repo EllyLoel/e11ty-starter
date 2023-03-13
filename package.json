@@ -1,53 +1,73 @@
 {
-  "name": "e11ty-starter",
-  "version": "0.1.0",
-  "description": "",
-  "type": "module",
-  "scripts": {
-    "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
-    "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
-    "clean": "rimraf _site",
-    "start:debug": "ELEVENTY_ENV=development DEBUG=Eleventy* npx @11ty/eleventy --serve",
-    "build:debug": "ELEVENTY_ENV=production DEBUG=Eleventy* npx @11ty/eleventy",
-    "build:benchmark": "ELEVENTY_ENV=production DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
-  },
-  "keywords": [
-    "11ty",
-    "eleventy",
-    "eleventy-sample",
-    "blog"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ellyloel/e11ty-starter.git"
-  },
-  "author": {
-    "name": "Elly Loel",
-    "email": "hello@ellyloel.com",
-    "url": "https://ellyloel.com/"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=14"
-  },
-  "bugs": {
-    "url": "https://github.com/ellyloel/e11ty-starter/issues"
-  },
-  "homepage": "https://github.com/ellyloel/e11ty-starter#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-activity-feed": "^1.0.9",
-    "@11ty/eleventy-img": "^3.0.0",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "@11ty/eleventy-plugin-vite": "^4.0.0",
-    "@11ty/eleventy-plugin-webc": "^0.8.1",
-    "eleventy-plugin-gen-favicons": "^1.1.2",
-    "luxon": "^3.2.1",
-    "rimraf": "^4.1.2"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+	"name": "e11ty-starter",
+	"version": "0.1.0",
+	"description": "",
+	"type": "module",
+	"scripts": {
+		"start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+		"build": "ELEVENTY_ENV=production npx @11ty/eleventy",
+		"start:debug": "ELEVENTY_ENV=development DEBUG=Eleventy* npx @11ty/eleventy --serve",
+		"build:debug": "ELEVENTY_ENV=production DEBUG=Eleventy* npx @11ty/eleventy",
+		"build:benchmark": "ELEVENTY_ENV=production DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+		"clean": "rimraf _site",
+		"format": "prettier . --write",
+		"lint:css": "stylelint \"src/assets/css/**/*.css\" --fix"
+	},
+	"keywords": [
+		"11ty",
+		"eleventy",
+		"eleventy-sample",
+		"blog"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ellyloel/e11ty-starter.git"
+	},
+	"author": {
+		"name": "Elly Loel",
+		"email": "hello@ellyloel.com",
+		"url": "https://ellyloel.com/"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=14"
+	},
+	"bugs": {
+		"url": "https://github.com/ellyloel/e11ty-starter/issues"
+	},
+	"homepage": "https://github.com/ellyloel/e11ty-starter#readme",
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.0",
+		"@11ty/eleventy-activity-feed": "^1.0.9",
+		"@11ty/eleventy-img": "^3.0.0",
+		"@11ty/eleventy-navigation": "^0.3.5",
+		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+		"@11ty/eleventy-plugin-vite": "^4.0.0",
+		"@11ty/eleventy-plugin-webc": "^0.8.1",
+		"a11y.css": "^5.2.0",
+		"cssnano": "^5.1.15",
+		"cssremedy": "0.1.0-beta.2",
+		"eleventy-plugin-gen-favicons": "^1.1.2",
+		"eslint": "^8.36.0",
+		"luxon": "^3.2.1",
+		"postcss": "^8.4.21",
+		"postcss-cli": "^10.1.0",
+		"postcss-import": "^15.1.0",
+		"postcss-js": "^4.0.1",
+		"postcss-preset-env": "^8.0.1",
+		"prettier": "^2.8.4",
+		"rimraf": "^4.1.2",
+		"stylelint": "^15.2.0",
+		"stylelint-config-standard": "^30.0.1",
+		"stylelint-order": "^6.0.3"
+	},
+	"browserslist": [
+		"defaults"
+	],
+	"pnpm": {
+		"patchedDependencies": {
+			"cssremedy@0.1.0-beta.2": "patches/cssremedy@0.1.0-beta.2.patch"
+		}
+	}
 }

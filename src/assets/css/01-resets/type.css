@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+	hanging-punctuation: first allow-end last;
+	max-width: var(--measure, 75ch);
+	overflow-wrap: break-word;
+	text-wrap: balance;
+}
+
+a {
+	color: var(--LinkText, LinkText);
+	-webkit-tap-highlight-color: transparent;
+
+	&:visited {
+		color: var(--VisitedText, VisitedText);
+	}
+
+	&:active {
+		color: var(--ActiveText, ActiveText);
+	}
+}
+
+mark {
+	background-color: var(--Mark, Mark);
+	color: var(--MarkText, MarkText);
+}

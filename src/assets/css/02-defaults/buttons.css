@@ -1,0 +1,25 @@
+button {
+	background-color: var(--button-bg, var(--ButtonFace));
+	border: medium solid var(--button-border, var(--ButtonBorder));
+	color: var(--button-text, var(--ButtonText));
+	padding: var(--space-4xs) var(--space-s);
+
+	&:hover,
+	&:focus {
+		--button-border: var(--AccentColor);
+	}
+
+	&:active {
+		--button-bg: var(--ActiveText);
+		--button-text: var(--bg);
+	}
+}
+
+[aria-pressed] {
+	--button-border: var(--SelectedItem);
+}
+
+[aria-pressed="true"] {
+	--button-bg: var(--SelectedItem);
+	--button-text: var(--SelectedItemText);
+}

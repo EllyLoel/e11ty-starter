@@ -1,0 +1,24 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.414,1240,18,1.618,4,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+	/* Sizes */
+	--step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+	--step-1: clamp(1.41rem, calc(1.27rem + 0.71vw), 1.82rem);
+	--step-2: clamp(2rem, calc(1.67rem + 1.64vw), 2.95rem);
+	--step-3: clamp(2.83rem, calc(2.15rem + 3.37vw), 4.76rem);
+	--step-4: clamp(4rem, calc(2.71rem + 6.46vw), 7.71rem);
+	--display: var(--step-4);
+	--headline: var(--step-3);
+	--title: var(--step-2);
+	--body: var(--step-1);
+	--label: var(--step-0);
+
+	/* Families */
+	--ui-mono: ui-monospace, sfmono-regular, consolas, monaco, monospace, serif;
+	--ui-sans: ui-sans-serif, system-ui, -apple-system, sans-serif;
+	--ui-serif: ui-serif, palatino, palatino linotype, palatino lt std,
+		book antiqua, georgia, serif;
+
+	/* Line length */
+	--measure: 60ch;
+}

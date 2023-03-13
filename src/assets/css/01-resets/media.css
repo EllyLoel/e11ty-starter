@@ -1,0 +1,24 @@
+img,
+video,
+audio,
+iframe,
+picture {
+	aspect-ratio: auto var(--ratio);
+	height: auto;
+	max-width: 100%;
+}
+
+video,
+iframe {
+	--ratio: 16 / 9;
+}
+
+svg {
+	fill: var(--fill, var(--svg, currentcolor));
+	stroke: var(--stroke, var(--svg, currentcolor));
+	stroke-width: 0;
+}
+
+[data-icon] {
+	display: inline-block;
+}

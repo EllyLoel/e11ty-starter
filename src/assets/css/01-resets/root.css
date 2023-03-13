@@ -1,0 +1,32 @@
+html {
+	block-size: 100%;
+	font-size: max(1em, 20px);
+	text-size-adjust: none;
+
+	/* scrollbar-gutter: stable both-edges; Removed until this bug is fixed: https://bugs.chromium.org/p/chromium/issues/detail?id=1318404#c2 */
+
+	/* Smooth scrolling for users that don't prefer reduced motion */
+	@media (prefers-reduced-motion: no-preference) {
+		&:focus-within {
+			scroll-behavior: smooth;
+		}
+	}
+}
+
+body {
+	background-color: var(--Canvas, Canvas);
+	color: var(--CanvasText, CanvasText);
+	font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	margin: var(--space-s, 1em) var(--space-s, 1em);
+	min-block-size: 100%;
+}
+
+::selection {
+	background-color: var(--Highlight, Highlight);
+	color: var(--HighlightText, HighlightText);
+}
+
+[hidden] {
+	display: none !important;
+}
